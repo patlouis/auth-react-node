@@ -1,15 +1,13 @@
 import express from 'express';
+import cors from 'cors';
+import authRouter from './routes/authRouter.js';
 
 const app = express();
+app.use(cors());
+app.use(express.json());
+app.use('/auth', authRouter);
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
-app.get('/api', (req, res) => {
-  res.json({ message: 'API is working!' });
-});
-
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
