@@ -1,0 +1,13 @@
+{
+ "name": "auth",
+ "private": true,
+ "version": "0.0.0",
+ "scripts": {
+  "client": "yarn --cwd client dev",
+  "server": "yarn --cwd server dev",
+  "dev": "concurrently \"yarn run client\" \"yarn run server\""
+ },
+ "devDependencies": {
+  "concurrently": "^9.1.2"
+ }
+}
